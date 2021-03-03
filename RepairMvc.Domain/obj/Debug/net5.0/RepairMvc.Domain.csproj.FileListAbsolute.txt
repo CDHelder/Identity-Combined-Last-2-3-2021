@@ -28,3 +28,18 @@ C:\Users\CDHel\Desktop\Youri laatste Versie Identity\RepairMvc.Domain\obj\Debug\
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity\RepairMvc.Domain\obj\Debug\net5.0\ref\RepairMvc.Domain.dll
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.pdb
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.genruntimeconfig.cache
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\RepairMvc.Domain.deps.json
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\RepairMvc.Domain.runtimeconfig.json
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\RepairMvc.Domain.runtimeconfig.dev.json
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\RepairMvc.Domain.dll
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\ref\RepairMvc.Domain.dll
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\bin\Debug\net5.0\RepairMvc.Domain.pdb
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.csprojAssemblyReference.cache
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.AssemblyInfoInputs.cache
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.AssemblyInfo.cs
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.csproj.CoreCompileInputs.cache
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.dll
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\ref\RepairMvc.Domain.dll
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.pdb
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.genruntimeconfig.cache

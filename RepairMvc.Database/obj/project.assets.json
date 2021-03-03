@@ -6172,11 +6172,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Database\\RepairMvc.Database.csproj",
+      "projectUniqueName": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Database\\RepairMvc.Database.csproj",
       "projectName": "RepairMvc.Database",
-      "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Database\\RepairMvc.Database.csproj",
+      "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Database\\RepairMvc.Database.csproj",
       "packagesPath": "C:\\Users\\CDHel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Database\\obj\\",
+      "outputPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Database\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CDHel\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6193,8 +6193,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {
-              "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj"
+            "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {
+              "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj"
             }
           }
         }

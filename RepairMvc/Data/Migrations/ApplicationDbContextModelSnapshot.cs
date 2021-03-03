@@ -219,6 +219,29 @@ namespace RepairMvc.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
+            modelBuilder.Entity("RepairMvc.Domain.Models.Image", b =>
+                {
+                    b.Property<int>("ImageID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ImageFilePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnType("int");
+
+                    b.HasKey("ImageID");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("RepairMvc.Domain.Models.Order", b =>
                 {
                     b.Property<int>("OrderId")
@@ -320,6 +343,9 @@ namespace RepairMvc.Data.Migrations
 
                     b.Property<int?>("PartID8")
                         .HasColumnType("int");
+
+                    b.Property<string>("PhotoPath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Postcode")
                         .HasColumnType("nvarchar(max)");
@@ -468,6 +494,17 @@ namespace RepairMvc.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("RepairMvc.Domain.Models.Image", b =>
+                {
+                    b.HasOne("RepairMvc.Domain.Models.Order", "Order")
+                        .WithMany("Images")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Order");
+                });
+
             modelBuilder.Entity("RepairMvc.Domain.Models.Order", b =>
                 {
                     b.HasOne("RepairMvc.Domain.Models.Product", "Part1")
@@ -551,6 +588,8 @@ namespace RepairMvc.Data.Migrations
 
             modelBuilder.Entity("RepairMvc.Domain.Models.Order", b =>
                 {
+                    b.Navigation("Images");
+
                     b.Navigation("OrderProducts");
                 });
 

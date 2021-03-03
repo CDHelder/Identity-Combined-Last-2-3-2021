@@ -56,6 +56,8 @@ namespace RepairMvc.Domain.Models
         public string WorkReport { get; set; }
 
         public ICollection<OrderProduct> OrderProducts { get; set; }
+        public  ICollection<Image> Images { get; set; }
+        public string PhotoPath { get; set; }
 
         //~~~~~~~~ All Parts ~~~~~~~~
         //Part 1

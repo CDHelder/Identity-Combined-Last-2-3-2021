@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {}
+    "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {
+    "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj",
         "projectName": "RepairMvc.Domain",
-        "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\RepairMvc.Domain.csproj",
+        "projectPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\RepairMvc.Domain.csproj",
         "packagesPath": "C:\\Users\\CDHel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity\\RepairMvc.Domain\\obj\\",
+        "outputPath": "C:\\Users\\CDHel\\Desktop\\Youri laatste Versie Identity TEST PROJECT\\RepairMvc.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CDHel\\AppData\\Roaming\\NuGet\\NuGet.Config",
