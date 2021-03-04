@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -12,9 +14,9 @@ namespace RepairMvc.Pages.Customer
 {
     public class DetailsModel : PageModel
     {
-        private readonly RepairMvc.Database.ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public DetailsModel(RepairMvc.Database.ApplicationDbContext context)
+        public DetailsModel(ApplicationDbContext context)
         {
             _context = context;
         }

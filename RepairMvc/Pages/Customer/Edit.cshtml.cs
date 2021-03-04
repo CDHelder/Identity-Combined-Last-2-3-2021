@@ -52,6 +52,13 @@ namespace RepairMvc.Pages.Customer
             ViewData["EndDates"] = new SelectList(_context.Orders, "OrderId", "EndDate");
             ViewData["HoursWorked"] = new SelectList(_context.Orders, "OrderId", "HoursWorked");
 
+            string filePath = Path.GetFileName(Order.PhotoPath);
+
+            using (var fileStream = new FileStream(filePath, FileMode.Open))
+            {
+                Photo = Path. (fileStream);
+            }
+
             //~~~~~~~~ Get value van naam ~~~~~~~~
             if (Order.PartID1 != null)
             {
