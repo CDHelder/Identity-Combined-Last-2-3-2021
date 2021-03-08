@@ -1,12 +1,13 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using RepairMvc.Database;
+using Microsoft.AspNetCore.Identity;
 using RepairMvc.Domain.Models;
+using Microsoft.Data.SqlClient;
+using System.Data;
 
 namespace RepairShop_Razor.Pages.RepairOrders
 {
@@ -28,6 +29,35 @@ namespace RepairShop_Razor.Pages.RepairOrders
             {
                 return NotFound();
             }
+
+            var ClientID = (from p in _context.Users where p.OrderId == id select p.Id).ToString();
+            foreach (var item in ClientID)
+            {
+                ViewData["UserId"] = item;
+            }
+            //new SelectList(_context.Users, "OrderId", "Id");
+
+            var ClientUserName = (from a in _context.Users where a.OrderId == id select a.UserName).ToString();
+            foreach (var item in ClientUserName)
+            {
+                ViewData["UserName"] = item;
+            }
+            //ViewData["UserName"] = new SelectList(_context.Users, "OrderId", "UserName");
+
+            var ClientEmail = (from b in _context.Users where b.OrderId == id select b.Emailadress).ToString();
+            foreach (var item in ClientEmail)
+            {
+                ViewData["UserEmail"] = item;
+            }
+            //ViewData["UserEmail"] = new SelectList(_context.Users, "OrderId", "Email");
+
+            var ClientPhoneNumber = (from c in _context.Users where c.OrderId == id select c.PhoneNumber).ToString();
+            foreach (var item in ClientPhoneNumber)
+            {
+                ViewData["UserPhoneNumber"] = item;
+            }
+            //ViewData["UserPhoneNumber"] = new SelectList(_context.Users, "OrderId", "PhoneNumber");
+
             /*
              * De data verwijzing naar de Parts kan door de one to many relatie tussen part, partlist en repairorder kan niet
              * Deze moet volgensm mij via een nieuwe variabele Die ene part part op regel 23 en part = await _contet op regel 38
