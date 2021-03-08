@@ -42,3 +42,4 @@ C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Doma
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\ref\RepairMvc.Domain.dll
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.pdb
 C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.genruntimeconfig.cache
+C:\Users\CDHel\Desktop\Youri laatste Versie Identity TEST PROJECT\RepairMvc.Domain\obj\Debug\net5.0\RepairMvc.Domain.csprojAssemblyReference.cache

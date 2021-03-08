@@ -3,8 +3,6 @@
 
 @{
     ViewData["Title"] = "Details";
-    var photoPath = "/images/" + (Model.Order.PhotoPath ?? "noimage.jpg");
-
 }
 
 <h1>Details</h1>
@@ -157,7 +155,10 @@
         }
 
     <div class="form-group row col-sm-4 offset-4">
-        <img class="imageThumbnail" src="@photoPath" asp-append-version="true" />
+        @foreach (var image in Model.Order.Images)
+        {
+            <img class="imageThumbnail" src="@image.ImageFilePath" asp-append-version="true" />
+        }
     </div>
 
     </dl>

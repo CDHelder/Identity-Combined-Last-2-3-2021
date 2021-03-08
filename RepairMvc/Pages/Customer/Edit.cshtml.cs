@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using RepairMvc.Database;
 using RepairMvc.Domain.Models;
+using RepairMvc.Services;
 
 namespace RepairMvc.Pages.Customer
 {
@@ -18,12 +19,15 @@ namespace RepairMvc.Pages.Customer
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IImageService imageService;
 
-        public EditModel(ApplicationDbContext context, 
-            IWebHostEnvironment webHostEnvironment)
+        public EditModel(ApplicationDbContext context,
+            IWebHostEnvironment webHostEnvironment,
+            IImageService imageService)
         {
             _context = context;
             this.webHostEnvironment = webHostEnvironment;
+            this.imageService = imageService;
         }
 
         [BindProperty]
@@ -39,7 +43,7 @@ namespace RepairMvc.Pages.Customer
                 return NotFound();
             }
 
-            Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
+            Order = await _context.Orders.Include(o => o.Images).FirstOrDefaultAsync(m => m.OrderId == id);
 
             if (Order == null)
             {
@@ -52,12 +56,13 @@ namespace RepairMvc.Pages.Customer
             ViewData["EndDates"] = new SelectList(_context.Orders, "OrderId", "EndDate");
             ViewData["HoursWorked"] = new SelectList(_context.Orders, "OrderId", "HoursWorked");
 
+            /*
             string filePath = Path.GetFileName(Order.PhotoPath);
-
             using (var fileStream = new FileStream(filePath, FileMode.Open))
             {
                 Photo = Path. (fileStream);
             }
+            */
 
             //~~~~~~~~ Get value van naam ~~~~~~~~
             if (Order.PartID1 != null)
@@ -180,22 +185,12 @@ namespace RepairMvc.Pages.Customer
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if(Photo != null)
-            {
-                if (Order.PhotoPath != null)
-                {
-                    string filePath = Path.Combine(webHostEnvironment.WebRootPath,
-                        "images", Order.PhotoPath);
-                    System.IO.File.Delete(filePath);
-                }
-
-                Order.PhotoPath = ProcessUploadedFile();
-            }
-            
-            if (!ModelState.IsValid)
-            {
+            if (Photo == null)
                 return Page();
-            }
+            
+            var path = webHostEnvironment.WebRootPath;
+
+            imageService.SaveImage(Photo, path, Order.OrderId);
 
             _context.Attach(Order).State = EntityState.Modified;
 
@@ -222,29 +217,24 @@ namespace RepairMvc.Pages.Customer
         {
             return _context.Orders.Any(e => e.OrderId == id);
         }
-        private string ProcessUploadedFile()
-        {
-            string uniqueFileName = null;
-
-            if (Photo != null)
-            {
-                string uploadsFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-                uniqueFileName = Guid.NewGuid().ToString() + "_" + Path.GetFileName(Photo.FileName);
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
-                using (var fileStream = new FileStream(filePath, FileMode.Create))
-                {
-                    Photo.CopyTo(fileStream);
-                }
-            }
-            /*
-             * De image return functie is ergens via de dbContext.
-             * Deze moet via lokaal GEEN DATABASE SHIT
-             * Haal de tutorial erbij als het moet
-             * https://www.youtube.com/watch?v=k_LaBr-liCk
-             * 
-             */
-
-            return uniqueFileName;
-        }
     }
 }
+
+//public static class mappers
+//{
+//    public static Image MapToImage(this IFormFile Photo)
+//    {
+//        string name = $"{Guid.NewGuid().ToString()}_{Photo.FileName}";
+//        string folderPath = $"images/{name}";
+
+//        var image = new Image()
+//        {
+
+//            ImageFilePath = Path.Combine(webHostEnvironment.WebRootPath, folderPath),
+//            ImageName = name,
+//            Order = Order
+//        };
+
+//        return image;
+//    }
+//}

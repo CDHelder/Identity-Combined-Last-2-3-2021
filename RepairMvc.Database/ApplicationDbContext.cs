@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using RepairMvc.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace RepairMvc.Database
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
@@ -27,6 +28,18 @@ namespace RepairMvc.Database
 
             modelBuilder.Entity<Product>().Property(x => x.Price).HasPrecision(11, 2);
 
+
+            modelBuilder.ApplyConfiguration<Order>(new OrderEntityTypeConfiguration());
+        }
+
+        public class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
+        {
+            public void Configure(EntityTypeBuilder<Order> orderConfiguration)
+            {
+                orderConfiguration.HasMany(o => o.Images)
+                    .WithOne(i => i.Order)
+                    .HasForeignKey(i => i.OrderId);
+            }
         }
     }
 }

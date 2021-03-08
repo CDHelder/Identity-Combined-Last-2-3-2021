@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using RepairMvc.Database;
 using RepairMvc.Domain.Models;
+using RepairMvc.Services;
 
 namespace RepairMvc.Pages.Customer
 {
@@ -17,12 +18,15 @@ namespace RepairMvc.Pages.Customer
     {
         private readonly ApplicationDbContext _context;
         private readonly IWebHostEnvironment webHostEnvironment;
+        private readonly IImageService imageService;
 
         public CreateModel(ApplicationDbContext context,
-            IWebHostEnvironment webHostEnvironment)
+            IWebHostEnvironment webHostEnvironment,
+            IImageService imageService)
         {
             _context = context;
             this.webHostEnvironment = webHostEnvironment;
+            this.imageService = imageService;
         }
 
         [BindProperty]
@@ -39,17 +43,17 @@ namespace RepairMvc.Pages.Customer
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-            if (Photo != null)
-            {
-                if (Order.PhotoPath != null)
-                {
-                    string filePath = Path.Combine(webHostEnvironment.WebRootPath,
-                        "images", Order.PhotoPath);
-                    System.IO.File.Delete(filePath);
-                }
+            //if (Photo != null)
+            //{
+            //    if (Order.PhotoPath != null)
+            //    {
+            //        string filePath = Path.Combine(webHostEnvironment.WebRootPath,
+            //            "images", Order.PhotoPath);
+            //        System.IO.File.Delete(filePath);
+            //    }
 
-                Order.PhotoPath = ProcessUploadedFile();
-            }
+            //    Order.PhotoPath = ProcessUploadedFile();
+            //}
 
             if (!ModelState.IsValid)
             {

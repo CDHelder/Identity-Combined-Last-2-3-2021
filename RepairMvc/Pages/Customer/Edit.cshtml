@@ -3,8 +3,6 @@
 
 @{
     ViewData["Title"] = "Edit";
-    var photoPath = "/images/" + (Model.Order.PhotoPath ?? "noimage.jpg");
-
 }
 
 <h1>Edit</h1>
@@ -155,7 +153,6 @@
         <form method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Order.OrderId" />
-            <input type="hidden" asp-for="Order.PhotoPath" />
 
             <div class="form-group">
                 <label asp-for="Order.Description" class="control-label"></label>
@@ -163,8 +160,11 @@
                 <span asp-validation-for="Order.Description" class="text-danger"></span>
             </div>
 
-            <div class="form-group row col-sm-4 offset-4" height: 200px; width: auto;>
-                <img class="imageThumbnail" src="@photoPath" asp-append-version="true" height: 200px; width: auto;/>
+            <div class="form-group row col-sm-4 offset-4">
+                @foreach (var image in Model.Order.Images)
+                {
+                    <img class="imageThumbnail" src="@image.ImageFilePath" asp-append-version="true" />
+                }
             </div>
 
             <div class="form-group row">
@@ -172,7 +172,7 @@
                 <div class="col-sm-10">
                     <div class="custom-file">
                         <input asp-for="Photo" class="custom-file-input form-control">
-                        <label class="custom-file-label">Click here to change photo</label>
+                        <label class="custom-file-label">Choose photo</label>
                     </div>
                 </div>
             </div>

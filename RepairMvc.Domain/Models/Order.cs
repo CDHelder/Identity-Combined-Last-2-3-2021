@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Http;
 
 namespace RepairMvc.Domain.Models
 {
@@ -57,7 +58,8 @@ namespace RepairMvc.Domain.Models
 
         public ICollection<OrderProduct> OrderProducts { get; set; }
         public  ICollection<Image> Images { get; set; }
-        public string PhotoPath { get; set; }
+
+        //public string PhotoPath { get; set; }
 
         //~~~~~~~~ All Parts ~~~~~~~~
         //Part 1

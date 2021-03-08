@@ -30,7 +30,7 @@ namespace RepairMvc.Pages.Customer
                 return NotFound();
             }
 
-            Order = await _context.Orders.FirstOrDefaultAsync(m => m.OrderId == id);
+            Order = await _context.Orders.Include(o => o.Images).FirstOrDefaultAsync(m => m.OrderId == id);
 
             if (Order == null)
             {
